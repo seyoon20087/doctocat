@@ -9,6 +9,19 @@ const mdx = require(`gatsby-plugin-mdx/utils/mdx`)
 
 const CONTRIBUTOR_CACHE = new Map()
 
+exports.onCreateWebpackConfig = ({actions}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        path: require.resolve('path-browserify')
+      },
+      fallback: {
+        fs: false
+      }
+    }
+  })
+}
+
 exports.createPages = async ({graphql, actions}, themeOptions) => {
   const repo = getPkgRepo(readPkgUp.sync().package)
 
