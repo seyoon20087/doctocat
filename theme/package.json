@@ -49,7 +49,6 @@
     "framer-motion": "^1.4.2",
     "fuse.js": "^3.4.5",
     "gatsby-plugin-catch-links": "^3",
-    "gatsby-plugin-local-search": "^2.0.1",
     "gatsby-plugin-manifest": "^3",
     "gatsby-plugin-mdx": "^2",
     "gatsby-plugin-page-creator": "^3",
