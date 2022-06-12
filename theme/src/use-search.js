@@ -1,7 +1,7 @@
 import {graphql, useStaticQuery} from 'gatsby'
 import path from 'path'
 import React from 'react'
-import SearchWorker from 'worker-loader!./search.worker.js'
+import SearchWorker from './search.worker.js'
 
 const ensureAbsolute = uri => (uri.startsWith('/') ? uri : `/${uri}`)
 

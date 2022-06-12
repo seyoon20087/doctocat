@@ -18,6 +18,9 @@ exports.onCreateWebpackConfig = ({actions}) => {
       fallback: {
         fs: false
       }
+    },
+    module: {
+      rules: [{test: /\.worker\.js$/, loader: 'worker-loader'}]
     }
   })
 }
