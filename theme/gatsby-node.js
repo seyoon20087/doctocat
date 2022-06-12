@@ -98,12 +98,7 @@ exports.onPostBuild = async ({graphql}) => {
         allSitePage(filter: {context: {frontmatter: {componentId: {ne: null}, status: {ne: null}}}}) {
           nodes {
             path
-            context {
-              frontmatter {
-                componentId
-                status
-              }
-            }
+            pageContext
           }
         }
       }
@@ -111,9 +106,9 @@ exports.onPostBuild = async ({graphql}) => {
 
     const components = data.allSitePage.nodes.map(node => {
       return {
-        id: node.context.frontmatter.componentId,
+        id: node.pageContext.frontmatter.componentId,
         path: node.path,
-        status: node.context.frontmatter.status.toLowerCase()
+        status: node.pageContext.frontmatter.status.toLowerCase()
       }
     })
 
@@ -123,6 +118,23 @@ exports.onPostBuild = async ({graphql}) => {
     // Some sites won't have any markdown files with `componentId` frontmatter and that's okay.
     console.warn('Unable to build components.json')
   }
+}
+
+// Workaround for missing sitePage.context:
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type SitePage implements Node {
+      context: SitePageContext
+    }
+    type SitePageContext {
+      frontmatter: FrontmatterContext
+    }
+    type FrontmatterContext {
+      componentId: String,
+      status: String,
+    }
+  `)
 }
 
 function getEditUrl(repo, filePath, defaultBranch) {
