@@ -53,7 +53,6 @@
     "gatsby-plugin-mdx": "^3",
     "gatsby-plugin-page-creator": "^4",
     "gatsby-plugin-react-helmet": "^5",
-    "gatsby-plugin-remove-trailing-slashes": "^4",
     "gatsby-plugin-styled-components": "^5",
     "gatsby-source-filesystem": "^4",
     "gatsby-transformer-yaml": "^4",

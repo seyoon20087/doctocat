@@ -11,7 +11,6 @@ module.exports = themeOptions => {
     plugins: [
       'gatsby-plugin-styled-components',
       'gatsby-plugin-react-helmet',
-      'gatsby-plugin-remove-trailing-slashes',
       'gatsby-plugin-catch-links',
       'gatsby-transformer-yaml',
       {
@@ -36,6 +35,7 @@ module.exports = themeOptions => {
           icon: themeOptions.icon ? path.resolve(themeOptions.icon) : require.resolve('./src/images/favicon.png')
         }
       }
-    ]
+    ],
+    trailingSlash: 'never',
   }
 }
