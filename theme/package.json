@@ -17,13 +17,13 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-primer-react": "0.7.4",
     "eslint-plugin-react": "^7.26.1",
-    "gatsby": "^3.0.0",
+    "gatsby": "^4.0.0",
     "prettier": "^2.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "peerDependencies": {
-    "gatsby": "3.x",
+    "gatsby": "4.x",
     "react": ">= 16.9.x",
     "react-dom": ">= 16.9.x"
   },
@@ -47,16 +47,16 @@
     "downshift": "^3.2.10",
     "find-up": "^6.3.0",
     "framer-motion": "^1.4.2",
-    "fuse.js": "^3.4.5",
-    "gatsby-plugin-catch-links": "^3",
-    "gatsby-plugin-manifest": "^3",
-    "gatsby-plugin-mdx": "^2",
-    "gatsby-plugin-page-creator": "^3",
-    "gatsby-plugin-react-helmet": "^4",
-    "gatsby-plugin-remove-trailing-slashes": "^3",
-    "gatsby-plugin-styled-components": "^4",
-    "gatsby-source-filesystem": "^3",
-    "gatsby-transformer-yaml": "^3",
+    "fuse.js": "^3",
+    "gatsby-plugin-catch-links": "^4",
+    "gatsby-plugin-manifest": "^4",
+    "gatsby-plugin-mdx": "^3",
+    "gatsby-plugin-page-creator": "^4",
+    "gatsby-plugin-react-helmet": "^5",
+    "gatsby-plugin-remove-trailing-slashes": "^4",
+    "gatsby-plugin-styled-components": "^5",
+    "gatsby-source-filesystem": "^4",
+    "gatsby-transformer-yaml": "^4",
     "get-pkg-repo": "^4.1.0",
     "github-slugger": "^1.2.1",
     "html-react-parser": "^1.4.0",
@@ -80,6 +80,6 @@
     "sentence-case": "^2.1.1",
     "styled-components": "^5.3.5",
     "styled-system": "^5.0.18",
-    "worker-loader": "^3.0.2"
+    "worker-loader": "^3.0.8"
   }
 }
