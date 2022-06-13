@@ -1,5 +1,5 @@
 import {MDXProvider} from '@mdx-js/react'
-import {ThemeProvider} from '@primer/react'
+import {ThemeProvider, SSRProvider} from '@primer/react'
 import Link from './link'
 import React from 'react'
 import mdxComponents from '../mdx-components'
@@ -50,9 +50,11 @@ const components = {
 
 function wrapRootElement({element}) {
   return (
-    <MDXProvider components={components}>
-      <ThemeProvider>{element}</ThemeProvider>
-    </MDXProvider>
+    <SSRProvider>
+      <MDXProvider components={components}>
+        <ThemeProvider>{element}</ThemeProvider>
+      </MDXProvider>
+    </SSRProvider>
   )
 }
 
