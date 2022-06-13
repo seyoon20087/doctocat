@@ -120,6 +120,23 @@ exports.onPostBuild = async ({graphql}) => {
   }
 }
 
+// Workaround for missing sitePage.context:
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type SitePage implements Node {
+      context: SitePageContext
+    }
+    type SitePageContext {
+      frontmatter: FrontmatterContext
+    }
+    type FrontmatterContext {
+      componentId: String,
+      status: String,
+    }
+  `)
+}
+
 function getEditUrl(repo, filePath, defaultBranch) {
   return `https://github.com/${repo.user}/${repo.project}/edit/${defaultBranch}/${filePath}`
 }
